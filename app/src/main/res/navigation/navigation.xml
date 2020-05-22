@@ -10,11 +10,11 @@
         android:label="fragment_title"
         tools:layout="@layout/fragment_title" >
         <action
-            android:id="@+id/action_titleFragment_to_detailFragment4"
-            app:destination="@id/detailFragment4" />
+            android:id="@+id/action_titleFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/detailFragment4"
+        android:id="@+id/detailFragment"
         android:name="com.example.android.covid_19_stay_alert.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />

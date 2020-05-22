@@ -1,11 +1,11 @@
 package com.example.android.covid_19_stay_alert
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.android.covid_19_stay_alert.databinding.FragmentTitleBinding
 
@@ -17,7 +17,7 @@ class TitleFragment : Fragment() {
             R.layout.fragment_title,container,false)
 
         binding.nextButton.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_titleFragment_to_detailFragment4)
+            view.findNavController().navigate(R.id.action_titleFragment_to_detailFragment)
         }
         setHasOptionsMenu(true)
         return binding.root
