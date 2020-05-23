@@ -6,16 +6,17 @@
     app:startDestination="@id/titleFragment">
     <fragment
         android:id="@+id/titleFragment"
-        android:name="com.example.android.covid_19_stay_alert.TitleFragment"
+        android:name="com.example.android.covid_19_stay_alert.ui.TitleFragment"
         android:label="fragment_title"
         tools:layout="@layout/fragment_title" >
         <action
             android:id="@+id/action_titleFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            app:destination="@id/detailFragment"
+            app:popUpTo="@id/titleFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.android.covid_19_stay_alert.DetailFragment"
+        android:name="com.example.android.covid_19_stay_alert.ui.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
 </navigation>
