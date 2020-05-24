@@ -18,5 +18,10 @@
         android:id="@+id/detailFragment"
         android:name="com.example.android.covid_19_stay_alert.ui.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="countryCode"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
 </navigation>

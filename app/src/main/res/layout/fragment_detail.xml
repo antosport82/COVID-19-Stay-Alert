@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="detailViewModel"
+            type="com.example.android.covid_19_stay_alert.DetailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,9 +15,10 @@
         tools:context=".ui.DetailFragment">
 
         <TextView
+            android:id="@+id/country_code"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:text="@{String.valueOf(detailViewModel.countryCode)}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
