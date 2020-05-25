@@ -40,6 +40,10 @@ class TitleFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(TitleViewModel::class.java)
         Timber.i("viewModel called")
 
+        binding.titleViewModel = viewModel
+
+        binding.lifecycleOwner = this
+
         setHasOptionsMenu(true)
         return binding.root
     }

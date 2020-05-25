@@ -37,6 +37,8 @@ class DetailFragment : Fragment() {
 
         binding.detailViewModel = viewModel
 
+        binding.lifecycleOwner = this
+
         setHasOptionsMenu(true)
         return binding.root
     }

@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="titleViewModel"
+            type="com.example.android.covid_19_stay_alert.TitleViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
