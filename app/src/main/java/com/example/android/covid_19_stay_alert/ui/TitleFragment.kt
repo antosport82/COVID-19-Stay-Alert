@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.android.covid_19_stay_alert.R
-import com.example.android.covid_19_stay_alert.TitleViewModel
 import com.example.android.covid_19_stay_alert.databinding.FragmentTitleBinding
+import com.example.android.covid_19_stay_alert.viewmodels.TitleViewModel
 import timber.log.Timber
 
 class TitleFragment : Fragment() {

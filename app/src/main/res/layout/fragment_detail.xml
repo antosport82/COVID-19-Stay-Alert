@@ -6,7 +6,7 @@
 
         <variable
             name="detailViewModel"
-            type="com.example.android.covid_19_stay_alert.DetailViewModel" />
+            type="com.example.android.covid_19_stay_alert.viewmodels.DetailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,4 +1,4 @@
-package com.example.android.covid_19_stay_alert
+package com.example.android.covid_19_stay_alert.viewmodels
 
 import androidx.lifecycle.ViewModel
 import timber.log.Timber

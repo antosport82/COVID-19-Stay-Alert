@@ -1,4 +1,4 @@
-package com.example.android.covid_19_stay_alert
+package com.example.android.covid_19_stay_alert.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -27,7 +27,9 @@ class DetailViewModel(code: Int) : ViewModel() {
 class DetailViewModelFactory(private val code: Int) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DetailViewModel::class.java)) {
-            return DetailViewModel(code) as T
+            return DetailViewModel(
+                code
+            ) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

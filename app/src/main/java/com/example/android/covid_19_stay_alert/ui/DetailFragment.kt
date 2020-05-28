@@ -8,10 +8,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
-import com.example.android.covid_19_stay_alert.DetailViewModel
-import com.example.android.covid_19_stay_alert.DetailViewModelFactory
 import com.example.android.covid_19_stay_alert.R
 import com.example.android.covid_19_stay_alert.databinding.FragmentDetailBinding
+import com.example.android.covid_19_stay_alert.viewmodels.DetailViewModel
+import com.example.android.covid_19_stay_alert.viewmodels.DetailViewModelFactory
 
 class DetailFragment : Fragment() {
 
@@ -32,7 +32,9 @@ class DetailFragment : Fragment() {
         val detailFragmentArgs by navArgs<DetailFragmentArgs>()
 
         viewViewModelFactory =
-            DetailViewModelFactory(detailFragmentArgs.countryCode)
+            DetailViewModelFactory(
+                detailFragmentArgs.countryCode
+            )
         viewModel = ViewModelProvider(this, viewViewModelFactory).get(DetailViewModel::class.java)
 
         binding.detailViewModel = viewModel
