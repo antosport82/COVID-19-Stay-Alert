@@ -16,7 +16,7 @@ interface CovidDao {
     fun update(country: Country)
 
     @Query("SELECT * from country_data_table WHERE countryId = :key")
-    fun get(key: Int): Country?
+    fun get(key: Long): Country?
 
     @Query("SELECT * FROM country_data_table ORDER BY countryId DESC")
     fun getAllCountry(): LiveData<List<Country>>
