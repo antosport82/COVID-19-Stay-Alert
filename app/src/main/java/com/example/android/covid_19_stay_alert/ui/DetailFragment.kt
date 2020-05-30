@@ -37,9 +37,9 @@ class DetailFragment : Fragment() {
             )
         viewModel = ViewModelProvider(this, viewViewModelFactory).get(DetailViewModel::class.java)
 
-        binding.detailViewModel = viewModel
-
         binding.lifecycleOwner = this
+
+        binding.detailViewModel = viewModel
 
         setHasOptionsMenu(true)
         return binding.root

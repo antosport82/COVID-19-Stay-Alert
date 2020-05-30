@@ -10,14 +10,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.android.covid_19_stay_alert.R
+import com.example.android.covid_19_stay_alert.database.CovidDatabase
 import com.example.android.covid_19_stay_alert.databinding.FragmentTitleBinding
 import com.example.android.covid_19_stay_alert.viewmodels.TitleViewModel
-import timber.log.Timber
+import com.example.android.covid_19_stay_alert.viewmodels.TitleViewModelFactory
 
 class TitleFragment : Fragment() {
 
     private lateinit var binding: FragmentTitleBinding
     private lateinit var viewModel: TitleViewModel
+    private lateinit var viewModelFactory: TitleViewModelFactory
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,12 +39,15 @@ class TitleFragment : Fragment() {
             view.findNavController().navigate(action)
         }
 
-        viewModel = ViewModelProvider(this).get(TitleViewModel::class.java)
-        Timber.i("viewModel called")
-
-        binding.titleViewModel = viewModel
+        // viewModel creation
+        val application = requireNotNull(this.activity).application
+        val dataSource = CovidDatabase.getInstance(application).covidDao
+        viewModelFactory = TitleViewModelFactory(dataSource, application)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(TitleViewModel::class.java)
 
         binding.lifecycleOwner = this
+
+        binding.titleViewModel = viewModel
 
         setHasOptionsMenu(true)
         return binding.root
