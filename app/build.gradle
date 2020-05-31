@@ -29,6 +29,9 @@ android {
         }
     }
 
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
@@ -45,8 +48,8 @@ dependencies {
     implementation "androidx.core:core-ktx:$core_ctx_version"
 
     //navigation
-    implementation "android.arch.navigation:navigation-fragment-ktx:$navigation_version"
-    implementation "android.arch.navigation:navigation-ui-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 
     // Room and Lifecycle dependencies
     implementation "androidx.room:room-runtime:$room_version"
