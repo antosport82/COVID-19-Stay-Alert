@@ -4,4 +4,11 @@
     <string name="hello_blank_fragment">Hello detail fragment</string>
     <string name="Next">Next</string>
 
+    //Demo
+    <string name="demo_name">United Kingdom</string>
+    <string name="demo_confirmed">Confirmed : 3000</string>
+    <string name="demo_recovered">Recovered : 220</string>
+    <string name="demo_death">Death : 220</string>
+    <string name="demo_lastupdated">Last Updated : 29 May 2020</string>
+
 </resources>
