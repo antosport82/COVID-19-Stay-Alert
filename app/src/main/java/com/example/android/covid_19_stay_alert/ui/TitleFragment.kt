@@ -22,9 +22,6 @@ class TitleFragment : Fragment() {
     private lateinit var binding: FragmentTitleBinding
     private lateinit var viewModel: TitleViewModel
 
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
