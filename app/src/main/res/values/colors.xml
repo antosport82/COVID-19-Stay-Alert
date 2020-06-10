@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    //country_list
+    <color name="davy_grey">#1B232F</color>
+    <color name="cool_grey">#90949c</color>
+    <color name="color_death">#F76353</color>
+    <color name="color_recovered">#00CC99</color>
+    <color name="color_active">#F2B900</color>
+    <color name="color_confirmed">#F2B900</color>
+
 </resources>

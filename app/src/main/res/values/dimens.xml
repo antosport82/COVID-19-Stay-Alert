@@ -6,4 +6,13 @@
     <dimen name="button_padding">16dp</dimen>
     <dimen name="button_text_size">18sp</dimen>
 
+
+    //country_list
+    <dimen name="padding_16">16dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+
+
+    //for text
+    <dimen name="text_14">14sp</dimen>
+
 </resources>

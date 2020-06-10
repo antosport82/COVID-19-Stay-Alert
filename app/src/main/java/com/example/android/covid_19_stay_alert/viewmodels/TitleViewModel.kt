@@ -10,29 +10,34 @@ import timber.log.Timber
 class TitleViewModel(val database: CovidDao, application: Application) :
     AndroidViewModel(application) {
 
-    private var countries: MutableList<String>
+    //TODO for now do not use database...create a fake list of Country instances..like 4 or 5
+    val countries = database.getAllCountry()
+
+//    val countries = mutableListOf(
+//        "China",
+//        "Italy",
+//        "USA",
+//        "Germany",
+//        "Brazil",
+//        "Sweden",
+//        "Spain",
+//        "France",
+//        "UK",
+//        "Austria",
+//        "Iran",
+//        "Egypt",
+//        "India",
+//        "Switzerland",
+//        "Mexico",
+//        "Canada"
+//    )
+
+    // private var countries: MutableList<String>
     val countryCodeTest = 11
 
     init {
         Timber.i("TitleViewModel created!")
-        countries = mutableListOf(
-            "China",
-            "Italy",
-            "USA",
-            "Germany",
-            "Brazil",
-            "Sweden",
-            "Spain",
-            "France",
-            "UK",
-            "Austria",
-            "Iran",
-            "Egypt",
-            "India",
-            "Switzerland",
-            "Mexico",
-            "Canada"
-        )
+
     }
 
     //Just for now, this will be changed
