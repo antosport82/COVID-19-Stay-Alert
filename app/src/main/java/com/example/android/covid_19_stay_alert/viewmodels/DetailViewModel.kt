@@ -13,7 +13,7 @@ class DetailViewModel(code: Int) : ViewModel() {
         get() = _countryCode
 
     init {
-        Timber.i("CountriesViewModel created!")
+        Timber.i("DetailViewModel created!")
         _countryCode.value = code
     }
 
@@ -25,11 +25,10 @@ class DetailViewModel(code: Int) : ViewModel() {
 }
 
 class DetailViewModelFactory(private val code: Int) : ViewModelProvider.Factory {
+    @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DetailViewModel::class.java)) {
-            return DetailViewModel(
-                code
-            ) as T
+            return DetailViewModel(code) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

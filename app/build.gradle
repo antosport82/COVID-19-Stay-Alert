@@ -8,8 +8,9 @@ android {
     compileSdkVersion compile_sdk_version
     buildToolsVersion "29.0.3"
 
-    dataBinding {
-        enabled = true
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
     }
 
     defaultConfig {
@@ -29,6 +30,9 @@ android {
         }
     }
 
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
@@ -45,17 +49,17 @@ dependencies {
     implementation "androidx.core:core-ktx:$core_ctx_version"
 
     //navigation
-    implementation "android.arch.navigation:navigation-fragment-ktx:$navigation_version"
-    implementation "android.arch.navigation:navigation-ui-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 
     // Room and Lifecycle dependencies
     implementation "androidx.room:room-runtime:$room_version"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "androidx.legacy:legacy-support-v4:$legacy_support_version"
     kapt "androidx.room:room-compiler:$room_version"
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 
     //logging
-    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation "com.jakewharton.timber:timber:$timber_version"
     
     //testing
     testImplementation "junit:junit:$junit_version"

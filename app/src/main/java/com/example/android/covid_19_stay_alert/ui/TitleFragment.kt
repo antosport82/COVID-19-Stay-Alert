@@ -15,12 +15,14 @@ import com.example.android.covid_19_stay_alert.database.CovidDatabase
 import com.example.android.covid_19_stay_alert.databinding.FragmentTitleBinding
 import com.example.android.covid_19_stay_alert.viewmodels.TitleViewModel
 import com.example.android.covid_19_stay_alert.viewmodels.TitleViewModelFactory
+import com.example.android.covid_19_stay_alert.viewmodels.TitleViewModelFactory
 import timber.log.Timber
 
 class TitleFragment : Fragment() {
 
     private lateinit var binding: FragmentTitleBinding
     private lateinit var viewModel: TitleViewModel
+    private lateinit var viewModelFactory: TitleViewModelFactory
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,21 +41,18 @@ class TitleFragment : Fragment() {
             view.findNavController().navigate(action)
         }
 
+        // viewModel creation
         val application = requireNotNull(this.activity).application
-
-        // Create an instance of the ViewModel Factory.
         val dataSource = CovidDatabase.getInstance(application).covidDao
-        val viewModelFactory = TitleViewModelFactory(dataSource, application)
-
-        viewModel = ViewModelProvider(this,viewModelFactory).get(TitleViewModel::class.java)
-        Timber.i("viewModel called")
-
-        binding.titleViewModel = viewModel
+        viewModelFactory = TitleViewModelFactory(dataSource, application)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(TitleViewModel::class.java)
 
         val adapter = CountryAdapter()
         binding.countryList.adapter=adapter
 
         binding.lifecycleOwner = this
+
+        binding.titleViewModel = viewModel
 
         setHasOptionsMenu(true)
         viewModel.countries.observe(viewLifecycleOwner, Observer {
@@ -65,4 +64,3 @@ class TitleFragment : Fragment() {
         return binding.root
     }
 }
-
