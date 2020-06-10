@@ -15,8 +15,6 @@ import com.example.android.covid_19_stay_alert.database.CovidDatabase
 import com.example.android.covid_19_stay_alert.databinding.FragmentTitleBinding
 import com.example.android.covid_19_stay_alert.viewmodels.TitleViewModel
 import com.example.android.covid_19_stay_alert.viewmodels.TitleViewModelFactory
-import com.example.android.covid_19_stay_alert.viewmodels.TitleViewModelFactory
-import timber.log.Timber
 
 class TitleFragment : Fragment() {
 
@@ -48,7 +46,7 @@ class TitleFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(TitleViewModel::class.java)
 
         val adapter = CountryAdapter()
-        binding.countryList.adapter=adapter
+        binding.countryList.adapter = adapter
 
         binding.lifecycleOwner = this
 
@@ -58,7 +56,7 @@ class TitleFragment : Fragment() {
         viewModel.countries.observe(viewLifecycleOwner, Observer {
 
             it?.let {
-                adapter.data=it
+                adapter.data = it
             }
         })
         return binding.root

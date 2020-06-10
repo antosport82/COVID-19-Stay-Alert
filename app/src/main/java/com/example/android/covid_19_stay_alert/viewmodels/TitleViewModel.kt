@@ -5,14 +5,13 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.covid_19_stay_alert.database.CovidDao
-import com.example.android.covid_19_stay_alert.database.CovidDao
 import timber.log.Timber
 
 class TitleViewModel(val database: CovidDao, application: Application) :
     AndroidViewModel(application) {
 
-    val database = datasource
-    val countries= database.getAllCountry()
+    //TODO for now do not use database...create a fake list of Country instances..like 4 or 5
+    val countries = database.getAllCountry()
 
 //    val countries = mutableListOf(
 //        "China",
@@ -33,7 +32,7 @@ class TitleViewModel(val database: CovidDao, application: Application) :
 //        "Canada"
 //    )
 
-   // private var countries: MutableList<String>
+    // private var countries: MutableList<String>
     val countryCodeTest = 11
 
     init {
